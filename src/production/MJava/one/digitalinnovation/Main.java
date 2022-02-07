@@ -1,9 +1,11 @@
 package production.MJava.one.digitalinnovation;
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        dama();
+        visitaNaFeira();
     }
 
     //Crie um programa que leia um número e mostre os números pares até esse número, inclusive ele mesmo.
@@ -55,5 +57,58 @@ public class Main {
                 System.out.println("2");
         }
         sc.close();
+    }
+
+    public static void areaCirunferencia(){
+        Scanner scan = new Scanner(System.in);
+        double area;
+        double raio;
+
+        raio = scan.nextDouble();
+
+        area = 3.14159 * (Math.pow(  raio  ,2));
+
+        System.out.printf("A=%.4f\n", area);
+    }
+
+    /*
+    * E foi esperança que motivou a Vovó Zazá, uma senhora de 72 anos, a realizar seu sonho de começar um curso universitário.
+    * Ela está fascinada com tudo o que diz respeito à Universidade: com as aulas, com a biblioteca, com os projetos de
+    * pesquisa e extensão, com o restaurante universitário, mas especialmente com a carteirinha de estudante que ela pode
+    * utilizar para pagar meia entrada no cinema. Semana passada, Vovó Zazá e seus colegas de turma foram ao cinema assistir
+    * a um filme, mas ficaram estarrecidos com o aumento do preço do ingresso.
+    * Mas ela não é muito boa em Matemática, e está solicitando sua ajuda para calcular a porcentagem de que precisa para
+    * completar o cartaz.
+
+    * Entrada
+    * A única linha da entrada consiste de dois valores A e B (0.00 < A ≤ B ≤ 1000.00), os quais, fornecidos com exatos
+    * dois dígitos após o ponto separador decimal, representam respectivamente o valor antigo e o valor novo do ingresso
+    * do cinema.*/
+
+    public static void valorCinema(){
+        Scanner leitor = new Scanner(System.in);
+        double A = leitor.nextDouble();
+        double B = leitor.nextDouble();
+        //Escreva aqui a sua lógica
+        double C;
+
+        C =(((B-A)*100.00)/A);
+        System.out.printf("%.2f%%\n",C);
+    }
+
+    /*
+    * A entrada contém 2 valores inteiros, separados por um espaço.
+    * Saída
+    * Imprimir a mensagem "X = " (sendo a letra X maiúscula) seguido pelo valor da variável X e pelo final de linha.
+    * Assegure que exista um espaço antes e depois do sinal de igualdade.  */
+
+    public static void visitaNaFeira(){
+        Scanner leitor = new Scanner(System.in);
+
+        int a = leitor.nextInt();
+        int b = leitor.nextInt();
+        int x = a+b;
+
+        System.out.println("X= " + x);
     }
 }
