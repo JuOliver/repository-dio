@@ -1,13 +1,11 @@
 package production.MJava.one.digitalinnovation;
 
-import jdk.swing.interop.SwingInterOpUtils;
+import org.w3c.dom.stylesheets.LinkStyle;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        numerosPar();
     }
 
     //Crie um programa que leia um número e mostre os números pares até esse número, inclusive ele mesmo.
@@ -42,16 +40,16 @@ public class Main {
      * */
     public static void dama() {
         Scanner sc = new Scanner(System.in);
-        try {
-            int x1, y1, x2, y2;
-            //se estiver na mesma linha ou mesma coluna ou mesma diagonal, gasta 1 movimento
-            //se estiver em qualquer outra posição, a rainha gastará 2 movimentos!
+        int x1, y1, x2, y2;
+        //se estiver na mesma linha ou mesma coluna ou mesma diagonal, gasta 1 movimento
+        //se estiver em qualquer outra posição, a rainha gastará 2 movimentos!
 
-            while (true) {
-                x1 = sc.nextInt();
-                y1 = sc.nextInt();
-                x2 = sc.nextInt();
-                y2 = sc.nextInt();
+        while (true) {
+            x1 = sc.nextInt();
+            y1 = sc.nextInt();
+            x2 = sc.nextInt();
+            y2 = sc.nextInt();
+            try {
                 if (x1 == 0 && y1 == 0 && x2 == 0 && y2 == 0) break; //condição de parada
                 if (x1 == x2 && y1 == y2)
                     System.out.println("0");
@@ -61,10 +59,10 @@ public class Main {
                     System.out.println("1");
                 else
                     System.out.println("2");
+            } catch (InputMismatchException e) {
+                System.out.println("Valor inválido! Digite um numero inteiro");
+                e.printStackTrace();
             }
-        } catch (InputMismatchException e) {
-            System.out.println("Valor inválido! Digite um numero inteiro");
-            e.printStackTrace();
         }
         sc.close();
     }
@@ -77,10 +75,10 @@ public class Main {
 
     public static void areaCirunferencia() {
         Scanner scan = new Scanner(System.in);
-        try {
-            double area;
-            double raio;
+        double area;
+        double raio;
 
+        try {
             raio = scan.nextDouble();
             area = 3.14159 * (Math.pow(raio, 2));
 
@@ -109,10 +107,11 @@ public class Main {
 
         Scanner leitor = new Scanner(System.in);
         System.out.println("Digite um número ");
+        double A = leitor.nextDouble();
+        double B = leitor.nextDouble();
         double C;
+
         try {
-            double A = leitor.nextDouble();
-            double B = leitor.nextDouble();
             C = (((B - A) * 100.00) / A);
             System.out.printf("%.2f%%\n", C);
         } catch (Exception e) {
@@ -129,17 +128,20 @@ public class Main {
 
     public static void visitaNaFeira() {
         Scanner leitor = new Scanner(System.in);
+        int a = leitor.nextInt();
+        int b = leitor.nextInt();
+
         try {
-            int a = leitor.nextInt();
-            int b = leitor.nextInt();
             int x = a + b;
             System.out.println("X= " + x);
         } catch (InputMismatchException e) {
             System.out.println("Numero deve ser inteiro");
             e.printStackTrace();
+            System.exit(0); //Ao terminar execucao do programa dentro do Try ou do Catch, finally não é executado
         } finally {
             System.out.println("Chegou no finally");
         }
 
     }
+
 }
