@@ -1,11 +1,10 @@
 package production.MJava.one.digitalinnovation;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
-import org.w3c.dom.stylesheets.LinkStyle;
-
-import java.util.*;
-
-public class Main {
+public class ResolucaoDesafios {
     public static void main(String[] args) {
+        visitaNaFeira();
     }
 
     //Crie um programa que leia um número e mostre os números pares até esse número, inclusive ele mesmo.
@@ -143,5 +142,4 @@ public class Main {
         }
 
     }
-
 }
